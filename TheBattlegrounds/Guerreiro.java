@@ -1,21 +1,20 @@
 public class Guerreiro extends Personagem {
     private String arma;
-    
+
     public Guerreiro(String nome, int nivel, int vida, String arma) {
-        this.setNome(nome);
-        this.setNivel(nivel);
-        this.setVida(vida);
+        super(nome, nivel, vida);
         this.arma = arma;
+        this.setDanoAtaque(18);
     }
-    
+
     public String getArma() {
         return this.arma;
     }
-    
+
     public void setArma(String arma) {
         this.arma = arma;
     }
-    
+
     public void atacar() {
         if (this.estaVivo()) {
             System.out.println(this.getNome() + " ataca com " + this.arma + "!");
@@ -23,7 +22,7 @@ public class Guerreiro extends Personagem {
             System.out.println(this.getNome() + " esta derrotado e nao pode atacar!");
         }
     }
-    
+
     public void exibirInfo() {
         System.out.println("=== Informacoes do Guerreiro ===");
         System.out.println("Nome: " + this.getNome());
